@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-per-env",
+    "dev": "npm run start:development",
     "start:production": "node -r esm index.js",
     "start:development": "nodemon -L --exec npm run start:production",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "@shabados/database": "^4.7.0",
+    "apollo-server-express": "^2.15.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "cross-per-env": "^1.0.5",
