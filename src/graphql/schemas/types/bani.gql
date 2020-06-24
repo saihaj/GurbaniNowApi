@@ -5,17 +5,11 @@ type Query {
     getBani(id: Int!): BaniInfo
 }
 
-type TranslitLine { 
-	text: String
-	larivaar: String
-}
-
 type Banis implements defaults {
+	id: ID!
 	akhar: String!
 	unicode: String!
 	english: String!
-	id: ID!
-	baniInfo: BaniInfo!
 }
 
 type BaniInfo implements defaults {
@@ -28,55 +22,17 @@ type BaniInfo implements defaults {
 	writer: Writer!
 	raag: Raag!
 	count: Int!
-	lines: [Line]!
+	lines: [BaniLines]!
 }
 
-type Source implements defaults { 
-	id: ID!
-	akhar: String!
-	unicode: String!
-	english: String!
-	length: Int!
-	pageName : Name!
-}
-
-type Writer implements defaults {
-	akhar: String!
-	unicode: String!
-	english: String!
-	id: ID!
-}
-
-type Raag implements defaults {
-	akhar: String!
-	unicode: String!
-	english: String!
-	id: ID!
-	startang: String!
-	endang: String!
-	raagwithpage: String!
-}
-
-type Line {
+type BaniLines implements Line {
 	id: ID!
 	shabadid: ID!
 	gurmukhi: LineDefaults!
 	larivaar: LineDefaults!
 	translation: Translations!
 	transliteration: Transliterations!
-	pageno: Int!
-	lineno: Int!
+	pageNum: Int!
+	lineNum: Int!
 	firstletters: LineDefaults!
-}
-
-type Translations { 
-	english: String
-	punjabi: LineDefaults!
-	spanish: String
-}
-
-type Transliterations { 
-	english: TranslitLine!
-	devanagari: TranslitLine!
-	urdu: TranslitLine!
 }

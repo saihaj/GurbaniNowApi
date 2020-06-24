@@ -1,11 +1,11 @@
 type Query {
 	"""Get list of all DB Sources"""
-    sources: [Sources!]!
+    sources: [Source!]!
     """Get list of all writers"""
-    writers: [Writers!]!
+    writers: [Writer!]!
 }
 
-type Sources implements defaults {
+type Source implements defaults {
 	id: ID!
 	akhar: String!
 	unicode: String!
@@ -24,7 +24,7 @@ type Section implements defaults {
     endPage: Int!
 }
 
-type Writers implements defaults {
+type Writer implements defaults {
 	id: ID!
 	akhar: String!
 	unicode: String!
