@@ -1,0 +1,26 @@
+type Query {
+    """Query a Line using ID"""
+    getLine(id: ID!): LineById
+}
+
+type LineById implements Line {
+    id: ID!
+    shabadid: ID!
+    gurmukhi: LineDefaults!
+    larivaar: LineDefaults!
+	translation: Translations!
+	transliteration: Transliterations!
+    source: LineSource!
+    writer: Writer!
+    raag: Raag!
+	lineNum: Int!
+	firstletters: LineDefaults!
+}
+
+type LineSource implements defaults & Source {
+    id: ID!
+    akhar: String!
+    unicode: String!
+    english: String!
+    pageName: Name!
+}
