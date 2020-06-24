@@ -4,3 +4,14 @@ interface defaults {
 	unicode: String
     english: String
 }
+
+type Name { 
+	akhar: String
+	unicode: String
+	english: String
+}
+
+type LineDefaults {
+	akhar: String
+	unicode:String
+}
