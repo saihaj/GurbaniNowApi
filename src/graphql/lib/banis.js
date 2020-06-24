@@ -120,8 +120,8 @@ export const getBaniLines = async baniId => {
             ),
           },
         },
-        pageno: line.sourcePage,
-        lineno: line.sourceLine,
+        pageNum: line.sourcePage,
+        lineNum: line.sourceLine,
         firstletters: {
           akhar: line.firstLetters,
           unicode: toUnicode( line.firstLetters ),
