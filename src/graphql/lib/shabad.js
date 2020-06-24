@@ -78,14 +78,10 @@ const getShabad = async shabadId => {
           unicode: textLarivaar( toUnicode( stripVishraams( line.gurmukhi ) ) ),
         },
         translation: {
-          english: {
-            default: getTranslation( line.translations, englishSources ),
-          },
+          english: getTranslation( line.translations, englishSources ),
           punjabi: {
-            default: {
-              akhar: toAscii( getTranslation( line.translations, punjabiSources ) ),
-              unicode: getTranslation( line.translations, punjabiSources ),
-            },
+            akhar: toAscii( getTranslation( line.translations, punjabiSources ) ),
+            unicode: getTranslation( line.translations, punjabiSources ),
           },
           spanish: getTranslation( line.translations, spanishSources ),
         },
@@ -106,8 +102,16 @@ const getShabad = async shabadId => {
               stripVishraams( getTransliteration( line.transliterations, 4 ) ),
             ),
           },
+          urdu: {
+            text: stripVishraams(
+              getTransliteration( line.transliterations, 5 ),
+            ),
+            larivaar: textLarivaar(
+              stripVishraams( getTransliteration( line.transliterations, 5 ) ),
+            ),
+          },
         },
-        linenum: line.sourceLine,
+        lineNum: line.sourceLine,
         firstletters: {
           akhar: line.firstLetters,
           unicode: toUnicode( line.firstLetters ),
