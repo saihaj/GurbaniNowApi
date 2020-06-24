@@ -1,9 +1,10 @@
 # GurbaniNow API [![badge](https://img.shields.io/badge/Powered%20By-GurbaniNow-blue.svg)](https://github.com/GurbaniNow)
 
-⚡️ 🙏 Fast and Powerful Gurbani and Shabad REST API used by [GurbaniNow Search](https://gurbaninow.com) and many other projects.
+### GraphQL API for Gurbani based on ⚡️ 🙏 Fast and Powerful Gurbani and Shabad RESTful API used by [GurbaniNow Search](https://gurbaninow.com)
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gurbaninow/api/master)](https://github.com/GurbaniNow/api/actions)
-[![Docker Pulls](https://img.shields.io/docker/pulls/gurbaninow/api)](https://hub.docker.com/r/gurbaninow/api)
+
+> ##### Work in progress. Checkout GurbaniNow for production use REST API
+
 [![GitHub license](https://img.shields.io/github/license/GurbaniNow/api)](https://github.com/GurbaniNow/api/blob/master/LICENSE)
 [![Email](https://img.shields.io/badge/Email-contact%40gurbaninow.com-blue.svg)](mailto:contact@gurbaninow.com)
 [![Slack](https://img.shields.io/badge/Slack-join%20the%20conversation-B649AB.svg)](https://chat.shabados.com)
@@ -12,17 +13,21 @@
 
 The API is powered by the open-source [Shabad OS Database](https://github.com/ShabadOS/database), which provides one the most accurate and correct Gurbani databases available.
 
-GurbaniNow API utilizes the [CloudFlare CDN](https://www.cloudflare.com/cdn/) to bring Gurbani to developers all over the [world](https://www.cloudflare.com/network/) at lightning fast speeds!
-
 If you need help, have an issue, or would like to request an feature, please submit it [here](https://github.com/GurbaniNow/gurbaninow-api/issues/new)!
 
 Contact us on Slack! [chat.shabados.com](https://chat.shabados.com)
 
-**The API is located at [api.gurbaninow.com](https://api.gurbaninow.com).**
+**The RESTful API is located at [api.gurbaninow.com](https://api.gurbaninow.com).**
+
+## Development
+* Clone this project
+* Install dependencies: `npm i`
+* Run locally: `npm run dev`
+* GraphQL Playground is available at `/graphql`
 
 ## Documentation
 
-The API Documentation can be viewed on the [Wiki](https://github.com/GurbaniNow/api/wiki).
+Checkout the GraphQL Playground for schema.
 
 ## Licence
 
