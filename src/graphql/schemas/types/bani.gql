@@ -12,7 +12,7 @@ type Banis implements defaults {
 	english: String!
 }
 
-type BaniInfo implements defaults {
+type BaniInfo implements defaults & MetaInfo {
 	id: ID!
 	akhar: String!
 	unicode: String!

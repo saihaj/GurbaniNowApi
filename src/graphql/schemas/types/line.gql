@@ -3,7 +3,7 @@ type Query {
     getLine(id: ID!): LineById
 }
 
-type LineById implements Line {
+type LineById implements Line & MetaInfo{
     id: ID!
     shabadid: ID!
     gurmukhi: LineDefaults!

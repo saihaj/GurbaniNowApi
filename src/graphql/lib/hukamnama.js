@@ -69,7 +69,7 @@ const getHukamnama = async ( date = false ) => {
 
   const [ firstShabad ] = hukam.shabads
   const count = hukam.shabads.reduce( ( acc, { lines } ) => acc + lines.length, 0 )
-
+  const [ id ] = hukam.shabads.map( ( { id } ) => id )
   const hukamLines = {
     date: {
       gregorian: {
@@ -97,8 +97,8 @@ const getHukamnama = async ( date = false ) => {
       },
     },
     hukamnamainfo: {
-      shabadid: hukam.shabads.map( ( { id } ) => id ),
-      pageno: firstShabad.lines[ 0 ].sourcePage,
+      shabadid: id,
+      pageNum: firstShabad.lines[ 0 ].sourcePage,
       source: {
         id: firstShabad.source.id,
         akhar: firstShabad.source.nameGurmukhi,
@@ -140,7 +140,7 @@ const getHukamnama = async ( date = false ) => {
       transliterations,
       sourceLine: linenum,
       firstLetters,
-    } ) => ( { line: {
+    } ) => ( {
       id,
       gurmukhi: {
         akhar: stripVishraams( gurmukhi ),
@@ -185,7 +185,7 @@ const getHukamnama = async ( date = false ) => {
         akhar: firstLetters,
         unicode: toUnicode( firstLetters ),
       },
-    } } ) ),
+    } ) ),
   ] ), [] )
 
   return hukamLines

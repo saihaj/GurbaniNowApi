@@ -56,3 +56,11 @@ interface Line {
 interface Source {
     pageName: Name!
 }
+
+scalar Date
+
+interface MetaInfo {
+    source: LineSource!
+    writer: Writer!
+    raag: Raag!
+}

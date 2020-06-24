@@ -3,7 +3,7 @@ type Query {
     getShabad(id: ID): Shabad
 }
 
-type Shabad {
+type Shabad implements MetaInfo {
     shabadid: ID!
     pageno: Int!
     source: LineSource!
