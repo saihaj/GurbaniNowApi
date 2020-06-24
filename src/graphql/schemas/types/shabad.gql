@@ -1,12 +1,12 @@
 type Query {
-	"""Query a Shabad using ID or get a random shabad"""
+    """Query a Shabad using ID or get a random shabad"""
     getShabad(id: ID): Shabad
 }
 
 type Shabad {
     shabadid: ID!
     pageno: Int!
-    source: Source!
+    source: LineSource!
     writer: Writer!
     raag: Raag!
     navigation: Navigation!

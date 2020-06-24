@@ -52,3 +52,7 @@ interface Line {
 	lineNum: Int!
 	firstletters: LineDefaults!
 }
+
+interface Source {
+    pageName: Name!
+}

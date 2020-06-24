@@ -1,8 +1,8 @@
 type Query {
 	"""Get list of all Banis"""
-    banis: [Banis!]!
+	banis: [Banis!]!
 	"""Query a Bani using ID"""
-    getBani(id: Int!): BaniInfo
+	getBani(id: Int!): BaniInfo
 }
 
 type Banis implements defaults {
@@ -18,7 +18,7 @@ type BaniInfo implements defaults {
 	unicode: String!
 	english: String!
 	pageno: String!
-	source : Source!
+	source : LineSource!
 	writer: Writer!
 	raag: Raag!
 	count: Int!

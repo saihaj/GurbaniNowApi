@@ -1,11 +1,11 @@
 type Query {
 	"""Get list of all DB Sources"""
-    sources: [Source!]!
+    sources: [MetaSource!]!
     """Get list of all writers"""
     writers: [Writer!]!
 }
 
-type Source implements defaults {
+type MetaSource implements defaults & Source {
 	id: ID!
 	akhar: String!
 	unicode: String!
