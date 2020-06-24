@@ -1,6 +1,6 @@
 interface defaults { 
 	id: ID!
-	akhar: String!
-	unicode: String!
-    english: String!
+	akhar: String
+	unicode: String
+    english: String
 }

@@ -2,8 +2,8 @@ import { getBanis, getBaniLines } from '../lib/banis'
 
 const BANIS = {
   banis: () => getBanis(),
-  bani: async ( _, { baniId } ) => {
-    const { baniinfo, bani } = await getBaniLines( baniId )
+  getBani: async ( _, { id } ) => {
+    const { baniinfo, bani } = await getBaniLines( id )
 
     return {
       ...baniinfo,
