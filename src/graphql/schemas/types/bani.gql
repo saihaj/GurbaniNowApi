@@ -1,17 +1,22 @@
-/* eslint-disable no-tabs */
-import { gql } from 'apollo-server-express'
-
-export default gql`
 type Query {
     banis: [Banis]!
     bani(baniId: String): BaniInfo
 }
 
-interface defaults { 
-	id: ID!
+type Name { 
 	akhar: String!
 	unicode: String!
 	english: String!
+}
+
+type LineDefaults {
+	akhar: String!
+	unicode:String!
+}
+
+type TranslitLine { 
+	text: String
+	larivaar: String
 }
 
 type Banis implements defaults {
@@ -44,12 +49,6 @@ type Source implements defaults {
 	pageName : Name
 }
 
-type Name { 
-	akhar: String!
-	unicode: String!
-	english: String!
-}
-
 type Writer implements defaults {
 	akhar: String!
 	unicode: String!
@@ -79,11 +78,6 @@ type Line {
 	firstletters: LineDefaults
 }
 
-type LineDefaults {
-	akhar: String!
-	unicode:String!
-}
-
 type Translations { 
 	english: String
 	punjabi: LineDefaults!
@@ -95,10 +89,3 @@ type Transliterations {
 	devanagari: TranslitLine
 	urdu: TranslitLine
 }
-
-type TranslitLine { 
-	text: String
-	larivaar: String
-}
-
-`

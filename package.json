@@ -43,6 +43,7 @@
     "fast-xml-parser": "^3.17.4",
     "fs-extra": "^8.1.0",
     "git-rev-sync": "^1.12.0",
+    "graphql-tools": "^6.0.10",
     "gurmukhi-utils": "^2.3.1",
     "helmet": "^3.23.2",
     "import-fresh": "^3.2.1",
