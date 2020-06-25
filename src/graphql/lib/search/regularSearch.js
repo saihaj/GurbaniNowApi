@@ -80,80 +80,78 @@ const regularSearch = async ( query, searchType, sourceId = 0, writerId, section
   return searchData.reduce( ( lines, line ) => ( [
     ...lines,
     {
-      shabad: {
-        id: line.id,
-        shabadid: line.shabadId,
-        gurmukhi: {
-          akhar: stripVishraams( line.gurmukhi ),
-          unicode: toUnicode( stripVishraams( line.gurmukhi ) ),
+      id: line.id,
+      shabadid: line.shabadId,
+      gurmukhi: {
+        akhar: stripVishraams( line.gurmukhi ),
+        unicode: toUnicode( stripVishraams( line.gurmukhi ) ),
+      },
+      larivaar: {
+        akhar: textLarivaar( stripVishraams( line.gurmukhi ) ),
+        unicode: textLarivaar( toUnicode( stripVishraams( line.gurmukhi ) ) ),
+      },
+      translation: {
+        english: {
+          default: getTranslation( line.translations, englishSources ),
         },
-        larivaar: {
-          akhar: textLarivaar( stripVishraams( line.gurmukhi ) ),
-          unicode: textLarivaar( toUnicode( stripVishraams( line.gurmukhi ) ) ),
-        },
-        translation: {
-          english: {
-            default: getTranslation( line.translations, englishSources ),
-          },
-          punjabi: {
-            default: {
-              akhar: toAscii( getTranslation( line.translations, punjabiSources ) ),
-              unicode: getTranslation( line.translations, punjabiSources ),
-            },
-          },
-          spanish: getTranslation( line.translations, spanishSources ),
-        },
-        transliteration: {
-          english: {
-            text: stripVishraams(
-              getTransliteration( line.transliterations, 1 ),
-            ),
-            larivaar: textLarivaar(
-              stripVishraams( getTransliteration( line.transliterations, 1 ) ),
-            ),
-          },
-          devanagari: {
-            text: stripVishraams(
-              getTransliteration( line.transliterations, 4 ),
-            ),
-            larivaar: textLarivaar(
-              stripVishraams( getTransliteration( line.transliterations, 4 ) ),
-            ),
+        punjabi: {
+          default: {
+            akhar: toAscii( getTranslation( line.translations, punjabiSources ) ),
+            unicode: getTranslation( line.translations, punjabiSources ),
           },
         },
-        source: {
-          id: line.shabad.section.source.id,
-          akhar: line.shabad.section.source.nameGurmukhi,
-          unicode: toUnicode( line.shabad.section.source.nameGurmukhi ),
-          english: line.shabad.section.source.nameEnglish,
-          length: line.shabad.section.source.length,
-          pageName: {
-            akhar: line.shabad.section.source.pageNameGurmukhi,
-            unicode: toUnicode( line.shabad.section.source.pageNameGurmukhi ),
-            english: line.shabad.section.source.pageNameEnglish,
-          },
+        spanish: getTranslation( line.translations, spanishSources ),
+      },
+      transliteration: {
+        english: {
+          text: stripVishraams(
+            getTransliteration( line.transliterations, 1 ),
+          ),
+          larivaar: textLarivaar(
+            stripVishraams( getTransliteration( line.transliterations, 1 ) ),
+          ),
         },
-        writer: {
-          id: line.shabad.writer.id,
-          akhar: line.shabad.writer.nameGurmukhi,
-          unicode: toUnicode( line.shabad.writer.nameGurmukhi ),
-          english: line.shabad.writer.nameEnglish,
+        devanagari: {
+          text: stripVishraams(
+            getTransliteration( line.transliterations, 4 ),
+          ),
+          larivaar: textLarivaar(
+            stripVishraams( getTransliteration( line.transliterations, 4 ) ),
+          ),
         },
-        raag: {
-          id: line.shabad.section.id,
-          akhar: line.shabad.section.nameGurmukhi,
-          unicode: toUnicode( line.shabad.section.nameGurmukhi ),
-          english: line.shabad.section.nameEnglish,
-          startang: line.shabad.section.startPage,
-          endang: line.shabad.section.endPage,
-          raagwithpage: `${line.shabad.section.nameEnglish} (${line.shabad.section.startPage}-${line.shabad.section.endPage})`,
+      },
+      source: {
+        id: line.shabad.section.source.id,
+        akhar: line.shabad.section.source.nameGurmukhi,
+        unicode: toUnicode( line.shabad.section.source.nameGurmukhi ),
+        english: line.shabad.section.source.nameEnglish,
+        length: line.shabad.section.source.length,
+        pageName: {
+          akhar: line.shabad.section.source.pageNameGurmukhi,
+          unicode: toUnicode( line.shabad.section.source.pageNameGurmukhi ),
+          english: line.shabad.section.source.pageNameEnglish,
         },
-        pageno: line.sourcePage,
-        lineno: line.sourceLine,
-        firstletters: {
-          akhar: line.firstLetters,
-          unicode: toUnicode( line.firstLetters ),
-        },
+      },
+      writer: {
+        id: line.shabad.writer.id,
+        akhar: line.shabad.writer.nameGurmukhi,
+        unicode: toUnicode( line.shabad.writer.nameGurmukhi ),
+        english: line.shabad.writer.nameEnglish,
+      },
+      raag: {
+        id: line.shabad.section.id,
+        akhar: line.shabad.section.nameGurmukhi,
+        unicode: toUnicode( line.shabad.section.nameGurmukhi ),
+        english: line.shabad.section.nameEnglish,
+        startang: line.shabad.section.startPage,
+        endang: line.shabad.section.endPage,
+        raagwithpage: `${line.shabad.section.nameEnglish} (${line.shabad.section.startPage}-${line.shabad.section.endPage})`,
+      },
+      pageno: line.sourcePage,
+      lineno: line.sourceLine,
+      firstletters: {
+        akhar: line.firstLetters,
+        unicode: toUnicode( line.firstLetters ),
       },
     },
   ] ), [] )

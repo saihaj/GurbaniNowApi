@@ -5,6 +5,7 @@ import meta from './meta'
 import shabad from './shabad'
 import line from './line'
 import hukamnama from './hukamnama'
+import search from './search'
 
 const rootResolver = {
   Query: {
@@ -13,6 +14,7 @@ const rootResolver = {
     ...shabad,
     ...line,
     ...hukamnama,
+    ...search,
   },
   Date: GraphQLDate,
 }
